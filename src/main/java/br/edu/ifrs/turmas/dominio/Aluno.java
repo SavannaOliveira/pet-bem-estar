@@ -2,6 +2,7 @@ package br.edu.ifrs.turmas.dominio;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
@@ -9,18 +10,15 @@ import jakarta.persistence.ManyToOne;
 public class Aluno {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTIFY);
-   
-    @ManyToOne // Navega 
-    
-    
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
     private String matricula;
-
+    
+    @ManyToOne
     private Turma turma;
-
+    
     public Aluno() {
     }
 
