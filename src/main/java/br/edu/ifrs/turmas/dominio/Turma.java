@@ -5,6 +5,7 @@ import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
@@ -12,22 +13,16 @@ import jakarta.persistence.OneToMany;
 @Entity
 public class Turma {
 
-    
-    @GeneratedValue(strategy = GenerationType.IDENTIFY);
-    private Long id; 
-    
-    @ManyToOne;
-    private Professor professor;
-    
-    @OneToMany(mappedBy = "turma");
-
-    
-  
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String nome;
-   
     
-   
+    @ManyToOne
+    private Professor professor;
+    
+    @OneToMany(mappedBy = "turma")
     private List<Aluno> alunos = new ArrayList<>();
 
     public Turma() {
