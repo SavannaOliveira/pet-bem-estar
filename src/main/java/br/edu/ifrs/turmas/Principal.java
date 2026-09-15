@@ -15,18 +15,21 @@ public class Principal {
 
     public static void main(String[] args) {
     
-	ProfessorDAO professorDAO = new ProfessorDAOJPA();   
-    
-    Professor ana = new Professor("Ana", "ana@ifrs.edu.br");
-    professorDAO.salvar(ana);
-    ana.setEmail("anuxa@email.com");
-    professorDAO.atualizar(ana);
-    
-    Professor vitor = new Professor("Vitor", "vitor@ifrs.edu.br");
-    professorDAO.salvar(vitor);
-    
-    professorDAO.remover(1L);
 
-	
-}
+  
+    
+		ProfessorDAO professorDAO = new ProfessorDAOJPA();   
+	    
+	    Professor ana = new Professor("Ana", "ana@ifrs.edu.br");
+	    professorDAO.salvar(ana);
+	    ana.setEmail("anuxa@email.com");
+	    professorDAO.atualizar(ana);
+	    
+	    Professor vitor = new Professor("Vitor", "vitor@ifrs.edu.br");
+	    professorDAO.salvar(vitor);
+	    
+	    professorDAO.remover(1L);
+    
+    	
+    }
 }
